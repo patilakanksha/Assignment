@@ -1,0 +1,50 @@
+﻿@model Assignment.Models.Hotel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="container d-flex justify-content-center hotel-details">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title text-center mb-0">@Html.DisplayFor(model => model.Name) Hotel</h2>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.CategoryId)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.CategoryId)
+                </dd>
+
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Address)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Address)
+                </dd>
+
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Contact)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Contact)
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer text-right">
+            @Html.ActionLink("Edit", "Update", "Hotel", new { id = Model.HotelId }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Back to List", "Index", "Hotel", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+</div>
