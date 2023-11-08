@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assignment.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace Assignment.Controllers
 {
     public class HomeController : Controller
     {
+        [CustomAuthorization]
         public ActionResult Index()
         {
             return View();

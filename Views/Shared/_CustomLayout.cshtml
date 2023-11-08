@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/Site.css")
+    @*<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />*@
+</head>
+<body>
+    
+    <div class="container body-content">
+        <!-- Bootstrap Toast (Bootstrap 5 classes) -->
+        @if (!string.IsNullOrWhiteSpace(ViewBag.ErrorMessage))
+        {
+            <div class="toast-container position-absolute top-0 end-0 p-3">
+                <div class="toast" id="errorToast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="5000">
+                    <div class="toast-header">
+                        <strong class="me-auto">Error</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        @ViewBag.ErrorMessage
+                    </div>
+                </div>
+            </div>
+        }
+        <!-- End Bootstrap Toast -->
+        @RenderBody()
+         
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/site.js")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

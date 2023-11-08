@@ -1,4 +1,5 @@
-﻿using Assignment.Models;
+﻿using Assignment.Filters;
+using Assignment.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +8,14 @@ using System.Web.Mvc;
 
 namespace Assignment.Controllers
 {
+    [AdminAccessFilter]
     public class HotelController : Controller
     { 
+
         MVCTrainingEntities hotelDbContext = new MVCTrainingEntities();
         // GET: Hotel
+
+        [CustomAuthorization]
         public ActionResult Index()
         {
             try

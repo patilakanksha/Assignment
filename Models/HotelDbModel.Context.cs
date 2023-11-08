@@ -27,5 +27,6 @@ namespace Assignment.Models
     
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Hotel> Hotels { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }
